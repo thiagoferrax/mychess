@@ -64,32 +64,6 @@ The backend can optionally provide functionality to save and load game states, a
 │               └── thiagoferraz
 │                   └── mychess
 │                       └── MychessApplicationTests.java
-└── target
-    ├── classes
-    │   ├── application.properties
-    │   ├── com
-    │   │   └── thiagoferraz
-    │   │       └── mychess
-    │   │           ├── controllers
-    │   │           │   └── ChessBoardController.class
-    │   │           ├── domain
-    │   │           │   ├── ChessBoard.class
-    │   │           │   ├── Piece.class
-    │   │           │   ├── PieceColour.class
-    │   │           │   └── PieceType.class
-    │   │           └── MychessApplication.class
-    │   └── META-INF
-    │       ├── MANIFEST.MF
-    │       └── maven
-    │           └── com.thiagoferraz
-    │               └── mychess
-    │                   ├── pom.properties
-    │                   └── pom.xml
-    └── test-classes
-        └── com
-            └── thiagoferraz
-                └── mychess
-                    └── MychessApplicationTests.class
 ```
 ## License
 
