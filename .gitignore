@@ -22,3 +22,33 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Spring Boot specific
+/target/
+/build/
+
+# IDE files and directories
+.idea/
+.vscode/
+
+# Gradle specific
+.gradle/
+/build/
+
+# Logs
+/logs/
+
+# Compiled class files
+*.class
+
+# Dependency directories
+/lib/
+/bin/
+/target/
+
+# Application properties
+/application.properties
+
+# Maven specific
+.mvn/
+
