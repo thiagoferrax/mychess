@@ -8,15 +8,13 @@ public class Piece implements Serializable {
 
 	private PieceType type;
 	private PieceColour colour;
-	private int x;
-	private int y;
+	private PiecePosition position;
 	
 	public Piece(PieceType type, PieceColour colour, int x, int y) {
 		super();
 		this.type = type;
 		this.colour = colour;
-		this.x = x;
-		this.y = y;
+		this.position = new PiecePosition(x, y);
 	}
 	
 	public PieceColour getColour() {
@@ -32,16 +30,13 @@ public class Piece implements Serializable {
 	public void setType(PieceType type) {
 		this.type = type;
 	}
-	public int getX() {
-		return x;
+	
+	public PiecePosition getPosition() {
+		return position;
 	}
-	public void setX(int x) {
-		this.x = x;
+
+	public void setPosition(PiecePosition position) {
+		this.position = position;
 	}
-	public int getY() {
-		return y;
-	}
-	public void setY(int y) {
-		this.y = y;
-	}
+
 }

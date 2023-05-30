@@ -12,10 +12,10 @@ import com.thiagoferraz.mychess.domain.PieceType;
 @RestController
 @RequestMapping("/chessboard")
 public class ChessBoardController {
-
+	
 		@GetMapping(path="/new", produces = "application/json")
 		public ChessBoard getANewChessBoard() {
-			ChessBoard board = new ChessBoard();
+			private ChessBoard board = new ChessBoard();
 			
 			board.addPiece(new Piece(PieceType.Rook, PieceColour.White, 0, 0));
 			board.addPiece(new Piece(PieceType.Knight, PieceColour.White, 1, 0));
