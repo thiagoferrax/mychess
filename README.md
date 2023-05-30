@@ -52,6 +52,7 @@ The backend can optionally provide functionality to save and load game states, a
 │   │   │               │   ├── ChessBoard.java
 │   │   │               │   ├── PieceColour.java
 │   │   │               │   ├── Piece.java
+│   │   │               │   ├── PiecePosition.java
 │   │   │               │   └── PieceType.java
 │   │   │               └── MychessApplication.java
 │   │   └── resources
