@@ -1,5 +1,7 @@
 # mychess
 
+## About
+
 As a player, I want to see the chessboard with all the pieces in their starting positions, so that I can begin playing the game.
 
 The backend should provide a representation of the chessboard with the initial setup of pieces.
@@ -27,3 +29,42 @@ The backend should store and update the current state of the game, including the
 As a player, I want to have the option to save the game and resume it later, so that I can continue playing from where I left off.
 
 The backend can optionally provide functionality to save and load game states, allowing players to save their progress and resume the game at a later time.
+
+## Architecture overview
+
+#### Project structure
+```
+├── HELP.md
+├── LICENSE
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── thiagoferraz
+│   │   │           └── mychess
+│   │   │               ├── controllers
+│   │   │               │   └── ChessBoardController.java
+│   │   │               ├── domain
+│   │   │               │   ├── ChessBoard.java
+│   │   │               │   ├── PieceColour.java
+│   │   │               │   ├── Piece.java
+│   │   │               │   └── PieceType.java
+│   │   │               └── MychessApplication.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── com
+│               └── thiagoferraz
+│                   └── mychess
+│                       └── MychessApplicationTests.java
+```
+## License
+
+MIT © [thiagoferrax](https://github.com/thiagoferrax).
