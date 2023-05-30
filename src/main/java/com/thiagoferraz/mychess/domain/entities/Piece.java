@@ -1,4 +1,7 @@
-package com.thiagoferraz.mychess.domain;
+package com.thiagoferraz.mychess.domain.entities;
+
+import com.thiagoferraz.mychess.domain.enums.PieceColour;
+import com.thiagoferraz.mychess.domain.enums.PieceType;
 
 import java.io.Serializable;
 
@@ -8,13 +11,13 @@ public class Piece implements Serializable {
 
 	private PieceType type;
 	private PieceColour colour;
-	private PiecePosition position;
+	private Position position;
 	
 	public Piece(PieceType type, PieceColour colour, int x, int y) {
 		super();
 		this.type = type;
 		this.colour = colour;
-		this.position = new PiecePosition(x, y);
+		this.position = new Position(x, y);
 	}
 	
 	public PieceColour getColour() {
@@ -31,11 +34,11 @@ public class Piece implements Serializable {
 		this.type = type;
 	}
 	
-	public PiecePosition getPosition() {
+	public Position getPosition() {
 		return position;
 	}
 
-	public void setPosition(PiecePosition position) {
+	public void setPosition(Position position) {
 		this.position = position;
 	}
 

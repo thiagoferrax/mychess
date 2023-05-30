@@ -1,15 +1,15 @@
-package com.thiagoferraz.mychess.domain;
+package com.thiagoferraz.mychess.domain.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PiecePosition implements Serializable {
+public class Position implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private int x;
 	private int y;
 	
-	public PiecePosition(int x, int y) {
+	public Position(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -41,7 +41,7 @@ public class PiecePosition implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PiecePosition other = (PiecePosition) obj;
+		Position other = (Position) obj;
 		return x == other.x && y == other.y;
 	}
 	

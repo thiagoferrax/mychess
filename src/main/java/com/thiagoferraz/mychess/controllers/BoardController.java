@@ -1,22 +1,21 @@
 package com.thiagoferraz.mychess.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.thiagoferraz.mychess.domain.ChessBoard;
-import com.thiagoferraz.mychess.domain.Piece;
-import com.thiagoferraz.mychess.domain.PieceColour;
-import com.thiagoferraz.mychess.domain.PieceType;
+import com.thiagoferraz.mychess.domain.entities.Board;
+import com.thiagoferraz.mychess.domain.entities.Move;
+import com.thiagoferraz.mychess.domain.entities.Piece;
+import com.thiagoferraz.mychess.domain.entities.Position;
+import com.thiagoferraz.mychess.domain.enums.PieceColour;
+import com.thiagoferraz.mychess.domain.enums.PieceType;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/chessboard")
-public class ChessBoardController {
+public class BoardController {
+		Board board = new Board();
 
 		@GetMapping(path="/new", produces = "application/json")
-		public ChessBoard getANewChessBoard() {
-			ChessBoard board = new ChessBoard();
-			
+		public Board getANewChessBoard() {
+
 			board.addPiece(new Piece(PieceType.Rook, PieceColour.White, 0, 0));
 			board.addPiece(new Piece(PieceType.Knight, PieceColour.White, 1, 0));
 			board.addPiece(new Piece(PieceType.Bishop, PieceColour.White, 2, 0));
@@ -53,6 +52,14 @@ public class ChessBoardController {
 			board.addPiece(new Piece(PieceType.Knight, PieceColour.Black, 6, 7));
 			board.addPiece(new Piece(PieceType.Rook, PieceColour.Black, 7, 7));
 			
+			return board;
+		}
+
+		@PostMapping(path="/move", produces = "application/json")
+		public Board move(@RequestBody Move move) {
+			Position from = move.getFrom();
+			Position to = move.getTo();
+			board.move(from, to);
 			return board;
 		}
 }

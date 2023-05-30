@@ -1,4 +1,4 @@
-package com.thiagoferraz.mychess.domain;
+package com.thiagoferraz.mychess.domain.enums;
 
 public enum PieceType {
 	Pawn(1, "Pawn", "Each player starts with eight pawns, arranged on the second rank (for White) and seventh rank (for Black). Pawns have the most limited movement. They move forward one square, but capture diagonally. On their initial move, pawns can move two squares forward."),
