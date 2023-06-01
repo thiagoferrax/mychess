@@ -71,7 +71,7 @@ The backend can optionally provide functionality to save and load game states, a
 ```
 #### Class diagram
 
-![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/07f00802-0f3a-4686-871e-66553a40c3a2)
+![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/82f5d463-7de5-44e0-b157-7126269a2ce5)
 
 ## License
 
