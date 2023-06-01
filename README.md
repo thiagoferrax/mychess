@@ -69,6 +69,10 @@ The backend can optionally provide functionality to save and load game states, a
 │                   └── mychess
 │                       └── MychessApplicationTests.java
 ```
+#### Class diagram
+
+![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/07f00802-0f3a-4686-871e-66553a40c3a2)
+
 ## License
 
 MIT © [thiagoferrax](https://github.com/thiagoferrax).
