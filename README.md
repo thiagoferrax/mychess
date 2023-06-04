@@ -34,6 +34,8 @@ The backend can optionally provide functionality to save and load game states, a
 
 #### Project structure
 ```
+├── docker-compose.yml
+├── Dockerfile
 ├── HELP.md
 ├── LICENSE
 ├── mvnw
@@ -62,17 +64,28 @@ The backend can optionally provide functionality to save and load game states, a
 │   │       ├── application.properties
 │   │       ├── static
 │   │       └── templates
-│   └── test
-│       └── java
-│           └── com
-│               └── thiagoferraz
-│                   └── mychess
-│                       └── MychessApplicationTests.java
 ```
 #### Class diagram
 
 ![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/82f5d463-7de5-44e0-b157-7126269a2ce5)
 
+#### Tech stack
+* [Spring Boot](http://spring.io/projects/spring-boot) for creating the RESTful Web Services
+* [MockMVC](https://spring.io/guides/gs/testing-web/) for testing the Web Layer
+* [Mockito](https://site.mockito.org/) for testing the Services Layer
+* [MySQL](https://www.mysql.com/) as database
+* [Maven](https://maven.apache.org/) for managing the project's build
+* [Docker](https://www.docker.com/) for building and managing the application distribution using containers
+
+## Install
+#### Download the repository
+```sh
+$ git clone https://github.com/thiagoferrax/mychess.git
+```
+#### With docker and docker-compose installed
+```sh
+$ cd mychess && docker-compose up
+```
 ## License
 
 MIT © [thiagoferrax](https://github.com/thiagoferrax).
