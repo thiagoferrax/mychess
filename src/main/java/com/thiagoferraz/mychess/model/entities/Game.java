@@ -1,6 +1,6 @@
 package com.thiagoferraz.mychess.model.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.thiagoferraz.mychess.model.enums.GameStatus;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -17,6 +17,9 @@ public class Game implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private Integer status;
+
     @ManyToMany
     @JoinTable(name = "GamePlayer", joinColumns = @JoinColumn(name = "gameId"), inverseJoinColumns = @JoinColumn(name = "playerId"))
     private List<Player> players = new ArrayList<>();
@@ -29,8 +32,9 @@ public class Game implements Serializable {
     public Game() {
     }
 
-    public Game(Integer id, Board board, Date start, Date end) {
+    public Game(Integer id, GameStatus status, Board board, Date start, Date end) {
         this.id = id;
+        this.status = status.getId();
         this.board = board;
         this.start = start;
         this.end = end;
@@ -74,6 +78,14 @@ public class Game implements Serializable {
 
     public void setEnd(Date end) {
         this.end = end;
+    }
+
+    public GameStatus getStatus() {
+        return GameStatus.toEnum(status);
+    }
+
+    public void setStatus(GameStatus status) {
+        this.status = status.getId();
     }
 
     @Override

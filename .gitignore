@@ -33,18 +33,13 @@ replay_pid*
 
 # Gradle specific
 .gradle/
-/build/
 
 # Logs
 /logs/
 
-# Compiled class files
-*.class
-
 # Dependency directories
 /lib/
 /bin/
-/target/
 
 # Application properties
 /application.properties

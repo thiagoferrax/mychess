@@ -8,10 +8,10 @@ public enum PieceType {
     Queen(5, 9, "Queen", "The most powerful piece on the board. Each player starts with one queen. The queen can move horizontally, vertically, and diagonally in any direction."),
     King(6, 100, "King", "The most powerful piece on the board. Each player starts with one queen. The queen can move horizontally, vertically, and diagonally in any direction.");
 
-    Integer id;
-    Integer points;
-    String name;
-    String description;
+    private final Integer id;
+    private final Integer points;
+    private final String name;
+    private final String description;
 
     PieceType(Integer id, Integer points, String name, String description) {
         this.id = id;
@@ -20,10 +20,18 @@ public enum PieceType {
         this.description = description;
     }
 
+    public static PieceType toEnum(Integer id) {
+        for (PieceType type : PieceType.values()) {
+            if (type.getId().equals(id)) {
+                return type;
+            }
+        }
+        return null;
+    }
+
     public Integer getId() {
         return id;
     }
-
 
     public int getPoints() {
         return points;
@@ -35,14 +43,5 @@ public enum PieceType {
 
     public String getDescription() {
         return description;
-    }
-
-    public static PieceType toEnum(Integer id) {
-        for(PieceType type : PieceType.values()) {
-            if(type.getId().equals(id)) {
-                return type;
-            }
-        }
-        return null;
     }
 }

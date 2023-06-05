@@ -16,9 +16,9 @@ public class Board implements Serializable {
     @Id
     private Integer id;
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     private List<Piece> pieces = new ArrayList<>();
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     private List<Move> moves = new ArrayList<>();
     @OneToOne
     @JoinColumn(name = "gameId")
@@ -65,6 +65,7 @@ public class Board implements Serializable {
     public void setGame(Game game) {
         this.game = game;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

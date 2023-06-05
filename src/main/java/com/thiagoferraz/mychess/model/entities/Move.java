@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -25,16 +26,18 @@ public class Move implements Serializable {
     @ManyToOne
     @JoinColumn(name = "boardId")
     private Board board;
+    private Date creation;
 
     public Move() {
     }
 
-    public Move(Integer id, Piece piece, Position toPosition, @Nullable Move next, Board board) {
+    public Move(Integer id, Piece piece, Position toPosition, @Nullable Move next, Board board, Date creation) {
         this.id = id;
         this.piece = piece;
         this.toPosition = toPosition;
         this.next = next;
         this.board = board;
+        this.creation = creation;
     }
 
     public Integer getId() {
@@ -99,4 +102,14 @@ public class Move implements Serializable {
                 ", next=" + next +
                 '}';
     }
+
+
+    public Date getCreation() {
+        return creation;
+    }
+
+    public void setCreation(Date creation) {
+        this.creation = creation;
+    }
+
 }

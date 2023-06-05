@@ -1,5 +1,6 @@
 package com.thiagoferraz.mychess.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thiagoferraz.mychess.model.enums.PieceColour;
 import com.thiagoferraz.mychess.model.enums.PieceType;
 import com.thiagoferraz.mychess.model.tos.Position;
@@ -19,8 +20,10 @@ public class Piece implements Serializable {
     private Integer type;
     private Integer colour;
     private Position position;
+
     @ManyToOne
     @JoinColumn(name = "boardId")
+    @JsonIgnore
     private Board board;
 
     public Piece() {
@@ -66,6 +69,15 @@ public class Piece implements Serializable {
     public void setPosition(Position position) {
         this.position = position;
     }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
+
 
     @Override
     public boolean equals(Object o) {

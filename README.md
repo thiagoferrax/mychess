@@ -71,6 +71,7 @@ and resume the game at a later time.
 │   │   │               │   │   ├── Piece.java
 │   │   │               │   │   └── Player.java
 │   │   │               │   ├── enums
+│   │   │               │   │   ├── GameStatus.java
 │   │   │               │   │   ├── PieceColour.java
 │   │   │               │   │   └── PieceType.java
 │   │   │               │   ├── repositories
@@ -79,7 +80,11 @@ and resume the game at a later time.
 │   │   │               │   │   └── PieceRepository.java
 │   │   │               │   └── tos
 │   │   │               │       └── Position.java
-│   │   │               └── MychessApplication.java
+│   │   │               ├── MychessApplication.java
+│   │   │               └── services
+│   │   │                   ├── BoardService.java
+│   │   │                   ├── GameService.java
+│   │   │                   └── PieceService.java
 │   │   └── resources
 │   │       ├── application.properties
 │   │       ├── static
@@ -90,6 +95,7 @@ and resume the game at a later time.
 │               └── thiagoferraz
 │                   └── mychess
 │                       └── MychessApplicationTests.java
+
 ```
 
 #### Class diagram
