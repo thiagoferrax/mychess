@@ -94,7 +94,7 @@ and resume the game at a later time.
 
 #### Class diagram
 
-![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/979b9c05-5f00-4ebc-a054-6172cdcb44fb)
+![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/a9e0ba22-dca6-41fd-acdc-99a255cc9183)
 
 #### Tech stack
 
