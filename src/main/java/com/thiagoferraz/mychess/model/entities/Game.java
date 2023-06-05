@@ -1,9 +1,6 @@
 package com.thiagoferraz.mychess.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -19,10 +16,15 @@ public class Game implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToMany
+    @JoinTable(name = "GamePlayer", joinColumns = @JoinColumn(name = "gameId"), inverseJoinColumns = @JoinColumn(name = "playerId"))
     private List<Player> players = new ArrayList<>();
     private Board board;
     private Date start;
     private Date end;
+
+    public Game() {
+    }
 
     public Game(Integer id, Board board, Date start, Date end) {
         this.id = id;

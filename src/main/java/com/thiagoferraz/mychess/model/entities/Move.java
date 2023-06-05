@@ -2,10 +2,7 @@ package com.thiagoferraz.mychess.model.entities;
 
 import com.thiagoferraz.mychess.model.tos.Position;
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -23,14 +20,19 @@ public class Move implements Serializable {
     @Nullable
     private Move next;
 
+    @ManyToOne
+    @JoinColumn(name = "boardId")
+    private Board board;
+
     public Move() {
     }
 
-    public Move(Integer id, Piece piece, Position toPosition, Move next) {
+    public Move(Integer id, Piece piece, Position toPosition, @Nullable Move next, Board board) {
         this.id = id;
         this.piece = piece;
         this.toPosition = toPosition;
         this.next = next;
+        this.board = board;
     }
 
     public Integer getId() {
@@ -63,6 +65,14 @@ public class Move implements Serializable {
 
     public void setNext(Move next) {
         this.next = next;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 
     @Override

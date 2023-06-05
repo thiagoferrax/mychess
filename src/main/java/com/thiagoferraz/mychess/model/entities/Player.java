@@ -1,12 +1,11 @@
 package com.thiagoferraz.mychess.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +18,18 @@ public class Player implements Serializable {
     private String name;
     private String email;
     private String password;
+    @ManyToMany(mappedBy = "players")
+    private List<Game> games = new ArrayList<>();
+
+    public Player() {
+    }
+
+    public Player(Integer id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
 
     public Integer getId() {
         return id;
@@ -50,6 +61,14 @@ public class Player implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
     }
 
     @Override

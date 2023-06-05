@@ -1,9 +1,6 @@
 package com.thiagoferraz.mychess.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -18,8 +15,14 @@ public class Board implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @OneToMany(mappedBy = "board")
     private List<Piece> pieces = new ArrayList<>();
+    @OneToMany(mappedBy = "board")
     private List<Move> moves = new ArrayList<>();
+
+    public Board() {
+    }
 
     public Board(Integer id) {
         this.id = id;

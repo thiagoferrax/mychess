@@ -3,10 +3,7 @@ package com.thiagoferraz.mychess.model.entities;
 import com.thiagoferraz.mychess.model.enums.PieceColour;
 import com.thiagoferraz.mychess.model.enums.PieceType;
 import com.thiagoferraz.mychess.model.tos.Position;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -22,16 +19,20 @@ public class Piece implements Serializable {
     private PieceType type;
     private PieceColour colour;
     private Position position;
+    @ManyToOne
+    @JoinColumn(name = "boardId")
+    private Board board;
 
     public Piece() {
 
     }
 
-    public Piece(Integer id, PieceType type, PieceColour colour, Position position) {
+    public Piece(Integer id, PieceType type, PieceColour colour, Position position, Board board) {
         this.id = id;
         this.type = type;
         this.colour = colour;
         this.position = position;
+        this.board = board;
     }
 
     public Integer getId() {
