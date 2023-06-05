@@ -1,6 +1,7 @@
 package com.thiagoferraz.mychess.controllers;
 
 import com.thiagoferraz.mychess.model.entities.Board;
+import com.thiagoferraz.mychess.model.entities.Game;
 import com.thiagoferraz.mychess.model.entities.Piece;
 import com.thiagoferraz.mychess.model.repositories.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @RestController
-@RequestMapping("/board")
+@RequestMapping("/boards")
 public class BoardController {
     @Autowired
     private PieceController pieceController;
@@ -21,18 +22,17 @@ public class BoardController {
     @Autowired
     private BoardRepository boardRepository;
 
-    @PostMapping("/save")
-    public Board save() {
-
-        Board board = new Board(null);
+    @PostMapping("/new")
+    public Board newBoard(Board board) {
+        boardRepository.save(board);
 
         Iterable<Piece> pieces = pieceController.newPieces(board);
-
         List<Piece> pieceList = StreamSupport.stream(pieces.spliterator(), false)
                 .collect(Collectors.toList());
+
         board.setPieces(pieceList);
 
-        return boardRepository.save(board);
+        return board;
     }
 
 }

@@ -30,7 +30,7 @@ public class PieceController {
         return pieceRepository.saveAll(pieces);
     }
 
-    @PostMapping("/newPieces")
+    @PostMapping("/new")
     public Iterable<Piece> newPieces(Board board) {
         Iterable<Piece> pieces = List.of(
                 new Piece(null, PieceType.Rook, PieceColour.White, new Position(0, 0), board),

@@ -1,5 +1,6 @@
 package com.thiagoferraz.mychess.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -13,19 +14,24 @@ public class Board implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @OneToMany(mappedBy = "board")
     private List<Piece> pieces = new ArrayList<>();
     @OneToMany(mappedBy = "board")
     private List<Move> moves = new ArrayList<>();
+    @OneToOne
+    @JoinColumn(name = "gameId")
+    @MapsId
+    @JsonIgnore
+    private Game game;
 
     public Board() {
     }
 
-    public Board(Integer id) {
+    public Board(Integer id, Game game) {
         this.id = id;
+        this.game = game;
     }
 
     public Integer getId() {
@@ -52,6 +58,13 @@ public class Board implements Serializable {
         this.moves = moves;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

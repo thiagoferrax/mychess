@@ -11,17 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/game")
+@RequestMapping("/games")
 public class GameController {
     @Autowired
     BoardController boardController;
     @Autowired
     GameRepository gameRepository;
 
-    @PostMapping("/newGame")
+    @PostMapping("/new")
     public Game newGame() {
-        Board board = boardController.save();
-        return gameRepository.save(new Game(null, board, new Date(), null));
+        Game game = new Game(null, null, new Date(), null);
+        Board board = boardController.newBoard(new Board(null, game));
+        game.setBoard(board);
+        return gameRepository.save(game);
     }
 
 }

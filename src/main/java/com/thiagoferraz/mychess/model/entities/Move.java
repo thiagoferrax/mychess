@@ -17,6 +17,8 @@ public class Move implements Serializable {
     private Integer id;
     private Piece piece;
     private Position toPosition;
+    @OneToOne
+    @JoinColumn(name = "moveId")
     @Nullable
     private Move next;
 

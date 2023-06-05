@@ -1,5 +1,6 @@
 package com.thiagoferraz.mychess.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -19,6 +20,8 @@ public class Game implements Serializable {
     @ManyToMany
     @JoinTable(name = "GamePlayer", joinColumns = @JoinColumn(name = "gameId"), inverseJoinColumns = @JoinColumn(name = "playerId"))
     private List<Player> players = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "game")
     private Board board;
     private Date start;
     private Date end;

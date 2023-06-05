@@ -16,8 +16,8 @@ public class Piece implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private PieceType type;
-    private PieceColour colour;
+    private Integer type;
+    private Integer colour;
     private Position position;
     @ManyToOne
     @JoinColumn(name = "boardId")
@@ -29,8 +29,8 @@ public class Piece implements Serializable {
 
     public Piece(Integer id, PieceType type, PieceColour colour, Position position, Board board) {
         this.id = id;
-        this.type = type;
-        this.colour = colour;
+        this.type = type.getId();
+        this.colour = colour.getId();
         this.position = position;
         this.board = board;
     }
@@ -44,19 +44,19 @@ public class Piece implements Serializable {
     }
 
     public PieceType getType() {
-        return type;
+        return PieceType.toEnum(type);
     }
 
     public void setType(PieceType type) {
-        this.type = type;
+        this.type = type.getId();
     }
 
     public PieceColour getColour() {
-        return colour;
+        return PieceColour.toEnum(colour);
     }
 
     public void setColour(PieceColour colour) {
-        this.colour = colour;
+        this.colour = colour.getId();
     }
 
     public Position getPosition() {
