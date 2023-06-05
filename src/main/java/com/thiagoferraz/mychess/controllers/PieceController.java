@@ -31,8 +31,8 @@ public class PieceController {
     }
 
     @PostMapping("/new")
-    public Iterable<Piece> newPieces(Board board) {
-        Iterable<Piece> pieces = List.of(
+    public List<Piece> newPieces(Board board) {
+        return List.of(
                 new Piece(null, PieceType.Rook, PieceColour.White, new Position(0, 0), board),
                 new Piece(null, PieceType.Knight, PieceColour.White, new Position(1, 0), board),
                 new Piece(null, PieceType.Bishop, PieceColour.White, new Position(2, 0), board),
@@ -68,7 +68,5 @@ public class PieceController {
                 new Piece(null, PieceType.Bishop, PieceColour.Black, new Position(5, 7), board),
                 new Piece(null, PieceType.Knight, PieceColour.Black, new Position(6, 7), board),
                 new Piece(null, PieceType.Rook, PieceColour.Black, new Position(7, 7), board));
-
-        return pieceRepository.saveAll(pieces);
     }
 }

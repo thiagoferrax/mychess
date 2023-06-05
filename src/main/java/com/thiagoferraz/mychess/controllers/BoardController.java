@@ -16,8 +16,6 @@ import java.util.stream.StreamSupport;
 @RestController
 @RequestMapping("/boards")
 public class BoardController {
-    @Autowired
-    private PieceController pieceController;
 
     @Autowired
     private BoardRepository boardRepository;
@@ -25,13 +23,6 @@ public class BoardController {
     @PostMapping("/new")
     public Board newBoard(Board board) {
         boardRepository.save(board);
-
-        Iterable<Piece> pieces = pieceController.newPieces(board);
-        List<Piece> pieceList = StreamSupport.stream(pieces.spliterator(), false)
-                .collect(Collectors.toList());
-
-        board.setPieces(pieceList);
-
         return board;
     }
 
