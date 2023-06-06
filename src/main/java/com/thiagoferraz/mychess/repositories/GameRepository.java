@@ -1,4 +1,4 @@
-package com.thiagoferraz.mychess.model.repositories;
+package com.thiagoferraz.mychess.repositories;
 
 import com.thiagoferraz.mychess.model.entities.Game;
 import org.springframework.data.repository.CrudRepository;

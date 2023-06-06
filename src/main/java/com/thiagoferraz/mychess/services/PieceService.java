@@ -1,7 +1,7 @@
 package com.thiagoferraz.mychess.services;
 
 import com.thiagoferraz.mychess.model.entities.Piece;
-import com.thiagoferraz.mychess.model.repositories.PieceRepository;
+import com.thiagoferraz.mychess.repositories.PieceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

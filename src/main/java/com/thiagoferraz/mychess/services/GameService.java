@@ -3,7 +3,7 @@ package com.thiagoferraz.mychess.services;
 import com.thiagoferraz.mychess.model.entities.Board;
 import com.thiagoferraz.mychess.model.entities.Game;
 import com.thiagoferraz.mychess.model.enums.GameStatus;
-import com.thiagoferraz.mychess.model.repositories.GameRepository;
+import com.thiagoferraz.mychess.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +17,6 @@ public class GameService {
     @Autowired
     private BoardService boardService;
 
-    @Autowired
-    private PieceService pieceService;
-
     public Game createNewGame() {
         Game game = newGame();
         Board board = boardService.createNewBoard(game);
@@ -27,10 +24,12 @@ public class GameService {
         return gameRepository.save(game);
     }
 
+
     private Game newGame() {
         Game game = new Game();
         game.setStatus(GameStatus.ACTIVE);
         game.setStart(new Date());
         return game;
     }
+
 }
