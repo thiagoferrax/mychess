@@ -100,7 +100,7 @@ and resume the game at a later time.
 
 #### Class diagram
 
-![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/11e5f185-fd3e-4c40-9dbf-b126db283fbf)
+![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/e4d9d331-54a3-4954-b7cd-832806b7687d)
 
 #### Tech stack
 
