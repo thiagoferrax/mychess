@@ -9,12 +9,12 @@ import com.thiagoferraz.mychess.model.enums.PieceType;
 import com.thiagoferraz.mychess.model.tos.Position;
 import com.thiagoferraz.mychess.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/games")
@@ -27,6 +27,16 @@ public class GameController {
         Game game = gameService.createNewGame();
         game.getBoard().setPieces(newPieces(game.getBoard()));
         return game;
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Game> findById(@PathVariable Integer id) {
+        Optional<Game> game = gameService.findById(id);
+        if (game.isPresent()) {
+            return ResponseEntity.ok(game.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     private List<Piece> newPieces(Board board) {

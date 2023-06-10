@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Optional;
 
 @Service
 public class GameService {
@@ -32,4 +33,7 @@ public class GameService {
         return game;
     }
 
+    public Optional<Game> findById(Integer id) {
+        return gameRepository.findById(id);
+    }
 }

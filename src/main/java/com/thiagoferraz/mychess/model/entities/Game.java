@@ -20,7 +20,7 @@ public class Game implements Serializable {
 
     private Integer status;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "GamePlayer", joinColumns = @JoinColumn(name = "gameId"), inverseJoinColumns = @JoinColumn(name = "playerId"))
     private List<Player> players = new ArrayList<>();
 
