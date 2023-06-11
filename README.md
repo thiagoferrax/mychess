@@ -92,6 +92,7 @@ mychess is a chess application that allows players to play the game of chess onl
 * [MySQL](https://www.mysql.com/) as database
 * [Maven](https://maven.apache.org/) for managing the project's build
 * [Docker](https://www.docker.com/) for building and managing the application distribution using containers
+* [React](https://react.dev/) for building the frontend application, also using SVG (Scalable Vector Graphics)
 
 ## Install
 
