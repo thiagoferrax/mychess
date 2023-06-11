@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +21,10 @@ public class Piece implements Serializable {
     private Integer type;
     private Integer colour;
     private Position position;
+
+    @OneToMany(mappedBy = "piece")
+    @JsonIgnore
+    private List<Move> moves;
 
     @ManyToOne
     @JoinColumn(name = "boardId")
@@ -76,6 +81,14 @@ public class Piece implements Serializable {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    public List<Move> getMoves() {
+        return moves;
+    }
+
+    public void setMoves(List<Move> moves) {
+        this.moves = moves;
     }
 
 

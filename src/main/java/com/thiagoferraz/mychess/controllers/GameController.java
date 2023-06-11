@@ -3,7 +3,6 @@ package com.thiagoferraz.mychess.controllers;
 import com.thiagoferraz.mychess.model.entities.Board;
 import com.thiagoferraz.mychess.model.entities.Game;
 import com.thiagoferraz.mychess.model.entities.Piece;
-import com.thiagoferraz.mychess.model.enums.GameStatus;
 import com.thiagoferraz.mychess.model.enums.PieceColour;
 import com.thiagoferraz.mychess.model.enums.PieceType;
 import com.thiagoferraz.mychess.model.tos.Position;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

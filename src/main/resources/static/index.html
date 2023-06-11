@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Geometric Chess Set</title>
+    <title>Geometric Chess Set</title>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+<svg height="400" width="400" xmlns="http://www.w3.org/2000/svg">
     <!-- Define the styles for the pieces -->
     <style>
       .piece {
@@ -21,115 +21,116 @@
       .black-square {
         fill: #779952;  /* Gray color */
       }
+
     </style>
 
     <!-- Define the individual pieces -->
     <g id="pawn">
-      <rect class="piece" width="50" height="25" />
+        <rect class="piece" height="25" width="50"/>
     </g>
 
     <g id="rook">
-      <rect class="piece" width="50" height="40" />
+        <rect class="piece" height="40" width="50"/>
     </g>
 
     <g id="knight">
-      <polygon class="piece" points="0,0 50,0 25,35" />
+        <polygon class="piece" points="0,0 50,0 25,35"/>
     </g>
 
     <g id="bishop">
-      <polygon class="piece" points="0,0 50,0 25,45" />
+        <polygon class="piece" points="0,0 50,0 25,45"/>
     </g>
 
     <g id="queen">
-      <rect class="piece" width="50" height="45" />
+        <rect class="piece" height="45" width="50"/>
     </g>
 
     <g id="king">
-      <rect class="piece" width="50" height="50" />
+        <rect class="piece" height="50" width="50"/>
     </g>
 
-    
+
     <g id="whiteRow">
-        <rect class="white-square" width="50" height="50" x="0" y="0" />
-        <rect class="black-square" width="50" height="50" x="50" y="0" />
-        <rect class="white-square" width="50" height="50" x="100" y="0" />
-        <rect class="black-square" width="50" height="50" x="150" y="0" />
-        <rect class="white-square" width="50" height="50" x="200" y="0" />
-        <rect class="black-square" width="50" height="50" x="250" y="0" />
-        <rect class="white-square" width="50" height="50" x="300" y="0" />
-        <rect class="black-square" width="50" height="50" x="350" y="0" />
+        <rect class="white-square" height="50" width="50" x="0" y="0"/>
+        <rect class="black-square" height="50" width="50" x="50" y="0"/>
+        <rect class="white-square" height="50" width="50" x="100" y="0"/>
+        <rect class="black-square" height="50" width="50" x="150" y="0"/>
+        <rect class="white-square" height="50" width="50" x="200" y="0"/>
+        <rect class="black-square" height="50" width="50" x="250" y="0"/>
+        <rect class="white-square" height="50" width="50" x="300" y="0"/>
+        <rect class="black-square" height="50" width="50" x="350" y="0"/>
     </g>
 
     <g id="blackRow">
-        <rect class="black-square" width="50" height="50" x="0" y="0" />
-        <rect class="white-square" width="50" height="50" x="50" y="0" />
-        <rect class="black-square" width="50" height="50" x="100" y="0" />
-        <rect class="white-square" width="50" height="50" x="150" y="0" />
-        <rect class="black-square" width="50" height="50" x="200" y="0" />
-        <rect class="white-square" width="50" height="50" x="250" y="0" />
-        <rect class="black-square" width="50" height="50" x="300" y="0" />
-        <rect class="white-square" width="50" height="50" x="350" y="0" />
-      </g>
+        <rect class="black-square" height="50" width="50" x="0" y="0"/>
+        <rect class="white-square" height="50" width="50" x="50" y="0"/>
+        <rect class="black-square" height="50" width="50" x="100" y="0"/>
+        <rect class="white-square" height="50" width="50" x="150" y="0"/>
+        <rect class="black-square" height="50" width="50" x="200" y="0"/>
+        <rect class="white-square" height="50" width="50" x="250" y="0"/>
+        <rect class="black-square" height="50" width="50" x="300" y="0"/>
+        <rect class="white-square" height="50" width="50" x="350" y="0"/>
+    </g>
 
     <!-- Define the chessboard -->
     <g class="chessboard">
-      <!-- Define the squares of the chessboard -->
-      <use xlink:href="#whiteRow" x="0" y="0" />
-      <use xlink:href="#blackRow" x="0" y="50" />
-      <use xlink:href="#whiteRow" x="0" y="100" />
-      <use xlink:href="#blackRow" x="0" y="150" />
-      <use xlink:href="#whiteRow" x="0" y="200" />
-      <use xlink:href="#blackRow" x="0" y="250" />
-      <use xlink:href="#whiteRow" x="0" y="300" />
-      <use xlink:href="#blackRow" x="0" y="350" />
-      <use xlink:href="#whiteRow" x="0" y="400" />
-  
-      <!-- Repeat the row for the other rows of the chessboard -->
-      <!-- ... -->
+        <!-- Define the squares of the chessboard -->
+        <use x="0" xlink:href="#whiteRow" y="0"/>
+        <use x="0" xlink:href="#blackRow" y="50"/>
+        <use x="0" xlink:href="#whiteRow" y="100"/>
+        <use x="0" xlink:href="#blackRow" y="150"/>
+        <use x="0" xlink:href="#whiteRow" y="200"/>
+        <use x="0" xlink:href="#blackRow" y="250"/>
+        <use x="0" xlink:href="#whiteRow" y="300"/>
+        <use x="0" xlink:href="#blackRow" y="350"/>
+        <use x="0" xlink:href="#whiteRow" y="400"/>
 
-      <!-- Place the pieces on the board -->
-     <!-- Place the pieces on the board -->
-     <g class="pieces">
-        <!-- Example placement of pieces -->
-        <use xlink:href="#rook" x="0" y="0" />
-        <use xlink:href="#knight" x="50" y="0" />
-        <use xlink:href="#bishop" x="100" y="0" />
-        <use xlink:href="#queen" x="150" y="0" />
-        <use xlink:href="#king" x="200" y="0" />
-        <use xlink:href="#bishop" x="250" y="0" />
-        <use xlink:href="#knight" x="300" y="0" />
-        <use xlink:href="#rook" x="350" y="0" />
+        <!-- Repeat the row for the other rows of the chessboard -->
+        <!-- ... -->
 
-        <use xlink:href="#pawn" x="0" y="50" />
-        <use xlink:href="#pawn" x="50" y="50" />
-        <use xlink:href="#pawn" x="100" y="50" />
-        <use xlink:href="#pawn" x="150" y="50" />
-        <use xlink:href="#pawn" x="200" y="50" />
-        <use xlink:href="#pawn" x="250" y="50" />
-        <use xlink:href="#pawn" x="300" y="50" />
-        <use xlink:href="#pawn" x="350" y="50" />
+        <!-- Place the pieces on the board -->
+        <!-- Place the pieces on the board -->
+        <g class="pieces">
+            <!-- Example placement of pieces -->
+            <use x="0" xlink:href="#rook" y="0"/>
+            <use x="50" xlink:href="#knight" y="0"/>
+            <use x="100" xlink:href="#bishop" y="0"/>
+            <use x="150" xlink:href="#queen" y="0"/>
+            <use x="200" xlink:href="#king" y="0"/>
+            <use x="250" xlink:href="#bishop" y="0"/>
+            <use x="300" xlink:href="#knight" y="0"/>
+            <use x="350" xlink:href="#rook" y="0"/>
 
-        <use xlink:href="#pawn" x="0" y="300" />
-        <use xlink:href="#pawn" x="50" y="300" />
-        <use xlink:href="#pawn" x="100" y="300" />
-        <use xlink:href="#pawn" x="150" y="300" />
-        <use xlink:href="#pawn" x="200" y="300" />
-        <use xlink:href="#pawn" x="250" y="300" />
-        <use xlink:href="#pawn" x="300" y="300" />
-        <use xlink:href="#pawn" x="350" y="300" />
+            <use x="0" xlink:href="#pawn" y="50"/>
+            <use x="50" xlink:href="#pawn" y="50"/>
+            <use x="100" xlink:href="#pawn" y="50"/>
+            <use x="150" xlink:href="#pawn" y="50"/>
+            <use x="200" xlink:href="#pawn" y="50"/>
+            <use x="250" xlink:href="#pawn" y="50"/>
+            <use x="300" xlink:href="#pawn" y="50"/>
+            <use x="350" xlink:href="#pawn" y="50"/>
 
-        <use xlink:href="#rook" x="0" y="350" />
-        <use xlink:href="#knight" x="50" y="350" />
-        <use xlink:href="#bishop" x="100" y="350" />
-        <use xlink:href="#queen" x="150" y="350" />
-        <use xlink:href="#king" x="200" y="350" />
-        <use xlink:href="#bishop" x="250" y="350" />
-        <use xlink:href="#knight" x="300" y="350" />
-        <use xlink:href="#rook" x="350" y="350" />
+            <use x="0" xlink:href="#pawn" y="300"/>
+            <use x="50" xlink:href="#pawn" y="300"/>
+            <use x="100" xlink:href="#pawn" y="300"/>
+            <use x="150" xlink:href="#pawn" y="300"/>
+            <use x="200" xlink:href="#pawn" y="300"/>
+            <use x="250" xlink:href="#pawn" y="300"/>
+            <use x="300" xlink:href="#pawn" y="300"/>
+            <use x="350" xlink:href="#pawn" y="300"/>
 
-        <!-- Continue placing the pawns and other pieces -->
-      </g>
+            <use x="0" xlink:href="#rook" y="350"/>
+            <use x="50" xlink:href="#knight" y="350"/>
+            <use x="100" xlink:href="#bishop" y="350"/>
+            <use x="150" xlink:href="#queen" y="350"/>
+            <use x="200" xlink:href="#king" y="350"/>
+            <use x="250" xlink:href="#bishop" y="350"/>
+            <use x="300" xlink:href="#knight" y="350"/>
+            <use x="350" xlink:href="#rook" y="350"/>
+
+            <!-- Continue placing the pawns and other pieces -->
+        </g>
     </g>
-  </svg>
+</svg>
 </body>
 </html>

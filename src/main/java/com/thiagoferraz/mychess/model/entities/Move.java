@@ -16,6 +16,9 @@ public class Move implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "pieceId")
     private Piece piece;
     private Position toPosition;
     @OneToOne

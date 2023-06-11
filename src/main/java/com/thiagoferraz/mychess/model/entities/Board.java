@@ -18,7 +18,8 @@ public class Board implements Serializable {
 
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     private List<Piece> pieces = new ArrayList<>();
-    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "board")
+    @JsonIgnore
     private List<Move> moves = new ArrayList<>();
     @OneToOne
     @JoinColumn(name = "gameId")

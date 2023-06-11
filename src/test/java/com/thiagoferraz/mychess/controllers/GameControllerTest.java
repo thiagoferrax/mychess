@@ -3,7 +3,6 @@ package com.thiagoferraz.mychess.controllers;
 import com.thiagoferraz.mychess.model.entities.Board;
 import com.thiagoferraz.mychess.model.entities.Game;
 import com.thiagoferraz.mychess.model.enums.GameStatus;
-import com.thiagoferraz.mychess.repositories.GameRepository;
 import com.thiagoferraz.mychess.services.BoardService;
 import com.thiagoferraz.mychess.services.GameService;
 import com.thiagoferraz.mychess.services.PieceService;
@@ -15,13 +14,10 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
