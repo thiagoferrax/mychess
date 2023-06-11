@@ -23,7 +23,7 @@ public class BoardService {
         return boardRepository.save(board);
     }
 
-    public Optional<Board> findById(Integer id) {
+    public Optional<Board> getBoardById(Integer id) {
         return boardRepository.findById(id);
     }
 }
