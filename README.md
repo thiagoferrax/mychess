@@ -6,15 +6,15 @@ mychess is a chess application that allows players to play the game of chess onl
 
 ## Features
 
-Display of the chessboard with all pieces in their starting positions.
-Selection of a piece to view its valid moves.
-Validation of moves to prevent illegal moves.
-Notification of check status to take appropriate action.
-Detection of checkmate to declare the game over and determine a winner.
-Detection of stalemate to declare the game as a draw.
-Turn-based gameplay to allow players to take turns making moves.
-Tracking of game state to view the progress and outcome of the game.
-Optional saving and loading of game states to resume games later.
+* Display of the chessboard with all pieces in their starting positions.
+* Selection of a piece to view its valid moves.
+* Validation of moves to prevent illegal moves.
+* Notification of check status to take appropriate action.
+* Detection of checkmate to declare the game over and determine a winner.
+* Detection of stalemate to declare the game as a draw.
+* Turn-based gameplay to allow players to take turns making moves.
+* Tracking of game state to view the progress and outcome of the game.
+* Optional saving and loading of game states to resume games later.
 
 ## Architecture overview
 
