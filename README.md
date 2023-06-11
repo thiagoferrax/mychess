@@ -53,54 +53,60 @@ and resume the game at a later time.
 ├── mvnw.cmd
 ├── pom.xml
 ├── README.md
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── thiagoferraz
-│   │   │           └── mychess
-│   │   │               ├── controllers
-│   │   │               │   ├── BoardController.java
-│   │   │               │   ├── GameController.java
-│   │   │               │   └── PieceController.java
-│   │   │               ├── model
-│   │   │               │   ├── entities
-│   │   │               │   │   ├── Board.java
-│   │   │               │   │   ├── Game.java
-│   │   │               │   │   ├── Move.java
-│   │   │               │   │   ├── Piece.java
-│   │   │               │   │   └── Player.java
-│   │   │               │   ├── enums
-│   │   │               │   │   ├── GameStatus.java
-│   │   │               │   │   ├── PieceColour.java
-│   │   │               │   │   └── PieceType.java
-│   │   │               │   ├── repositories
-│   │   │               │   │   ├── BoardRepository.java
-│   │   │               │   │   ├── GameRepository.java
-│   │   │               │   │   └── PieceRepository.java
-│   │   │               │   └── tos
-│   │   │               │       └── Position.java
-│   │   │               ├── MychessApplication.java
-│   │   │               └── services
-│   │   │                   ├── BoardService.java
-│   │   │                   ├── GameService.java
-│   │   │                   └── PieceService.java
-│   │   └── resources
-│   │       ├── application.properties
-│   │       ├── static
-│   │       └── templates
-│   └── test
-│       └── java
-│           └── com
-│               └── thiagoferraz
-│                   └── mychess
-│                       └── MychessApplicationTests.java
-
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── thiagoferraz
+    │   │           └── mychess
+    │   │               ├── controllers
+    │   │               │   ├── BoardController.java
+    │   │               │   ├── GameController.java
+    │   │               │   ├── MoveController.java
+    │   │               │   └── PieceController.java
+    │   │               ├── model
+    │   │               │   ├── entities
+    │   │               │   │   ├── Board.java
+    │   │               │   │   ├── Game.java
+    │   │               │   │   ├── Move.java
+    │   │               │   │   ├── Piece.java
+    │   │               │   │   └── Player.java
+    │   │               │   ├── enums
+    │   │               │   │   ├── GameStatus.java
+    │   │               │   │   ├── PieceColour.java
+    │   │               │   │   └── PieceType.java
+    │   │               │   └── tos
+    │   │               │       └── Position.java
+    │   │               ├── MychessApplication.java
+    │   │               ├── repositories
+    │   │               │   ├── BoardRepository.java
+    │   │               │   ├── GameRepository.java
+    │   │               │   ├── MoveRepository.java
+    │   │               │   └── PieceRepository.java
+    │   │               └── services
+    │   │                   ├── BoardService.java
+    │   │                   ├── GameService.java
+    │   │                   ├── MoveService.java
+    │   │                   └── PieceService.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       │   └── index.html
+    │       └── templates
+    └── test
+        └── java
+            └── com
+                └── thiagoferraz
+                    └── mychess
+                        ├── controllers
+                        │   └── GameControllerTest.java
+                        └── services
+                            └── GameServiceTest.java
 ```
 
 #### Class diagram
 
-![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/e4d9d331-54a3-4954-b7cd-832806b7687d)
+![mychess](https://github.com/thiagoferrax/mychess/assets/43149895/bbb2795e-b2cd-4515-a639-b05f05f067ae)
 
 #### Tech stack
 
