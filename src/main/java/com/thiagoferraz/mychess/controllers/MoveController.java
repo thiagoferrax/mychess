@@ -9,11 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/moves")
+@RequestMapping("/api/moves")
 public class MoveController {
     @Autowired
     private MoveService moveService;
@@ -22,30 +21,24 @@ public class MoveController {
     private PieceService pieceService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Move> findById(@PathVariable Integer id) {
-        Optional<Move> move = moveService.findById(id);
-        if (move.isPresent()) {
-            return ResponseEntity.ok(move.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<Move> getMoveById(@PathVariable Integer id) {
+        Optional<Move> move = moveService.getMoveById(id);
+        return move.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/new")
-    public Move save(@RequestBody Move move) {
+    @PostMapping
+    public Move saveMove(@RequestBody Move move) {
         Piece piece = move.getPiece();
         piece.setPosition(move.getToPosition());
+        Piece saved = pieceService.savePiece(piece);
 
-        Piece savedPiece = pieceService.save(piece);
-
-        move.setPiece(savedPiece);
+        move.setPiece(saved);
         move.setCreation(new Date());
-
-        return moveService.save(move);
+        return moveService.saveMove(move);
     }
 
     @GetMapping
-    public Iterable<Move> findAll() {
-        return moveService.findAll();
+    public Iterable<Move> findAllMoves() {
+        return moveService.findAllMoves();
     }
 }

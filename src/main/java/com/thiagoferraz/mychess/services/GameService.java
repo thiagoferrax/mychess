@@ -18,7 +18,7 @@ public class GameService {
     @Autowired
     private BoardService boardService;
 
-    public Game createNewGame() {
+    public Game createGame() {
         Game game = newGame();
         Board board = boardService.createNewBoard(game);
         game.setBoard(board);

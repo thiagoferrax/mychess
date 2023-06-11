@@ -14,7 +14,7 @@ public class PieceService {
         return pieceRepository.saveAll(pieces);
     }
 
-    public Piece save(Piece piece) {
+    public Piece savePiece(Piece piece) {
         return pieceRepository.save(piece);
     }
 }

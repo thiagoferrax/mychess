@@ -49,7 +49,7 @@ public class GameControllerTest {
         game.setStart(date);
         game.setBoard(board);
 
-        given(gameService.createNewGame()).willReturn(game);
+        given(gameService.createGame()).willReturn(game);
 
         // When and Then
         this.mockMvc.perform(post("/games/new")).andExpect(status().isOk());

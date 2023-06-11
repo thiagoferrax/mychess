@@ -8,6 +8,7 @@ import com.thiagoferraz.mychess.model.enums.PieceType;
 import com.thiagoferraz.mychess.model.tos.Position;
 import com.thiagoferraz.mychess.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,29 +16,31 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/games")
+@RequestMapping("/api/games")
 public class GameController {
-    @Autowired
-    private GameService gameService;
+    private final GameService gameService;
 
-    @PostMapping("/new")
-    public Game createNewGame() {
-        Game game = gameService.createNewGame();
-        game.getBoard().setPieces(newPieces(game.getBoard()));
+    @Autowired
+    public GameController(GameService gameService) {
+        this.gameService = gameService;
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Game createGame() {
+        Game game = gameService.createGame();
+        Board board = game.getBoard();
+        board.setPieces(getPiecesInitialPosition(board));
         return game;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Game> findById(@PathVariable Integer id) {
+    public ResponseEntity<Game> getGameById(@PathVariable Integer id) {
         Optional<Game> game = gameService.findById(id);
-        if (game.isPresent()) {
-            return ResponseEntity.ok(game.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return game.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
-    private List<Piece> newPieces(Board board) {
+    private List<Piece> getPiecesInitialPosition(Board board) {
         return List.of(
                 new Piece(null, PieceType.Rook, PieceColour.White, new Position(0, 0), board),
                 new Piece(null, PieceType.Knight, PieceColour.White, new Position(1, 0), board),
