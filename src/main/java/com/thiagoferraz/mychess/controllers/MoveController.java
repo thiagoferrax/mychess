@@ -17,9 +17,6 @@ public class MoveController {
     @Autowired
     private MoveService moveService;
 
-    @Autowired
-    private PieceService pieceService;
-
     @GetMapping("/{id}")
     public ResponseEntity<Move> getMoveById(@PathVariable Integer id) {
         Optional<Move> move = moveService.getMoveById(id);
@@ -28,12 +25,6 @@ public class MoveController {
 
     @PostMapping
     public Move saveMove(@RequestBody Move move) {
-        Piece piece = move.getPiece();
-        piece.setPosition(move.getToPosition());
-        Piece saved = pieceService.savePiece(piece);
-
-        move.setPiece(saved);
-        move.setCreation(new Date());
         return moveService.saveMove(move);
     }
 

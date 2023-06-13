@@ -4,6 +4,8 @@ import com.thiagoferraz.mychess.model.entities.Board;
 import com.thiagoferraz.mychess.model.entities.Game;
 import com.thiagoferraz.mychess.model.enums.GameStatus;
 import com.thiagoferraz.mychess.repositories.GameRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 
 @Service
 public class GameService {
+    Logger logger = LoggerFactory.getLogger(GameService.class);
+
     @Autowired
     private GameRepository gameRepository;
 
@@ -19,6 +23,7 @@ public class GameService {
     private BoardService boardService;
 
     public Game createGame() {
+        logger.info("Creating a new game and board with pieces in their original position.");
         Game game = newGame();
         Board board = boardService.createNewBoard(game);
         game.setBoard(board);
