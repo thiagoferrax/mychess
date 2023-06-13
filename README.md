@@ -43,6 +43,12 @@ stalemate detection, turn-based gameplay, and the ability to save and resume gam
     │   │               │   ├── GameController.java
     │   │               │   ├── MoveController.java
     │   │               │   └── PieceController.java
+    │   │               ├── exceptions
+    │   │               │   ├── ControllerExceptionHandler.java
+    │   │               │   ├── FieldMessage.java
+    │   │               │   ├── MoveNotAllowedException.java
+    │   │               │   ├── StandardError.java
+    │   │               │   └── ValidationError.java
     │   │               ├── model
     │   │               │   ├── entities
     │   │               │   │   ├── Board.java
@@ -70,7 +76,6 @@ stalemate detection, turn-based gameplay, and the ability to save and resume gam
     │   └── resources
     │       ├── application.properties
     │       ├── static
-    │       │   └── index.html
     │       └── templates
     └── test
         └── java
