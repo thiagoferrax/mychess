@@ -2,7 +2,10 @@
 
 ## About
 
-mychess is a chess application that allows players to play the game of chess online. It provides a user-friendly interface for players to interact with the chessboard and make their moves. The application includes various features to ensure a fair and enjoyable gaming experience, including move validation, check detection, checkmate detection, stalemate detection, turn-based gameplay, and the ability to save and resume games.
+mychess is a chess application that allows players to play the game of chess online. It provides a user-friendly
+interface for players to interact with the chessboard and make their moves. The application includes various features to
+ensure a fair and enjoyable gaming experience, including move validation, check detection, checkmate detection,
+stalemate detection, turn-based gameplay, and the ability to save and resume games.
 
 ## Features
 
@@ -107,6 +110,14 @@ $ git clone https://github.com/thiagoferrax/mychess.git
 ```sh
 $ cd mychess && docker-compose up
 ```
+## Swagger UI Documentation
+
+To access the Swagger UI documentation for this project, please follow the steps below:
+
+1. Make sure that the project is running locally on your machine.
+2. Open your web browser and navigate to [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
+3. This interactive interface provides a comprehensive overview of the API endpoints, request/response schemas, and allows you to interact with the API directly.
+4. It's a helpful tool for testing and exploring the functionality of the project.
 
 ## License
 

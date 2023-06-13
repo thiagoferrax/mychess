@@ -18,12 +18,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/games")
 public class GameController {
-    private final GameService gameService;
-
     @Autowired
-    public GameController(GameService gameService) {
-        this.gameService = gameService;
-    }
+    private GameService gameService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
