@@ -38,7 +38,12 @@ stalemate detection, turn-based gameplay, and the ability to save and resume gam
     │   │   └── com
     │   │       └── thiagoferraz
     │   │           └── mychess
+    │   │               ├── configurations
+    │   │               │   ├── ApplicationConfig.java
+    │   │               │   ├── JwtAuthenticationFilter.java
+    │   │               │   └── SecurityConfiguration.java
     │   │               ├── controllers
+    │   │               │   ├── AuthenticationController.java
     │   │               │   ├── BoardController.java
     │   │               │   ├── GameController.java
     │   │               │   ├── MoveController.java
@@ -59,18 +64,24 @@ stalemate detection, turn-based gameplay, and the ability to save and resume gam
     │   │               │   ├── enums
     │   │               │   │   ├── GameStatus.java
     │   │               │   │   ├── PieceColour.java
-    │   │               │   │   └── PieceType.java
+    │   │               │   │   ├── PieceType.java
+    │   │               │   │   └── Role.java
     │   │               │   └── tos
-    │   │               │       └── Position.java
+    │   │               │       ├── AuthenticationResponse.java
+    │   │               │       ├── Position.java
+    │   │               │       └── RegisterRequest.java
     │   │               ├── MychessApplication.java
     │   │               ├── repositories
     │   │               │   ├── BoardRepository.java
     │   │               │   ├── GameRepository.java
     │   │               │   ├── MoveRepository.java
-    │   │               │   └── PieceRepository.java
+    │   │               │   ├── PieceRepository.java
+    │   │               │   └── PlayerRepository.java
     │   │               └── services
+    │   │                   ├── AuthenticationService.java
     │   │                   ├── BoardService.java
     │   │                   ├── GameService.java
+    │   │                   ├── JwtService.java
     │   │                   ├── MoveService.java
     │   │                   └── PieceService.java
     │   └── resources
