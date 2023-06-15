@@ -38,52 +38,50 @@ stalemate detection, turn-based gameplay, and the ability to save and resume gam
     │   │   └── com
     │   │       └── thiagoferraz
     │   │           └── mychess
-    │   │               ├── configurations
-    │   │               │   ├── ApplicationConfig.java
-    │   │               │   ├── JwtAuthenticationFilter.java
-    │   │               │   └── SecurityConfiguration.java
-    │   │               ├── controllers
+    │   │               ├── authentication
+    │   │               │   ├── ApplicationConfiguration.java
     │   │               │   ├── AuthenticationController.java
-    │   │               │   ├── BoardController.java
-    │   │               │   ├── GameController.java
-    │   │               │   ├── MoveController.java
-    │   │               │   └── PieceController.java
+    │   │               │   ├── AuthenticationResponse.java
+    │   │               │   ├── AuthenticationService.java
+    │   │               │   ├── JwtAuthenticationFilter.java
+    │   │               │   ├── JwtService.java
+    │   │               │   ├── RegisterRequest.java
+    │   │               │   ├── Role.java
+    │   │               │   └── SecurityConfiguration.java
+    │   │               ├── chessboard
+    │   │               │   ├── ChessboardController.java
+    │   │               │   ├── Chessboard.java
+    │   │               │   ├── ChessboardRepository.java
+    │   │               │   └── ChessboardService.java
     │   │               ├── exceptions
-    │   │               │   ├── ControllerExceptionHandler.java
+    │   │               │   ├── ExceptionHandlerController.java
     │   │               │   ├── FieldMessage.java
     │   │               │   ├── MoveNotAllowedException.java
     │   │               │   ├── StandardError.java
     │   │               │   └── ValidationError.java
-    │   │               ├── model
-    │   │               │   ├── entities
-    │   │               │   │   ├── Board.java
-    │   │               │   │   ├── Game.java
-    │   │               │   │   ├── Move.java
-    │   │               │   │   ├── Piece.java
-    │   │               │   │   └── Player.java
-    │   │               │   ├── enums
-    │   │               │   │   ├── GameStatus.java
-    │   │               │   │   ├── PieceColour.java
-    │   │               │   │   ├── PieceType.java
-    │   │               │   │   └── Role.java
-    │   │               │   └── tos
-    │   │               │       ├── AuthenticationResponse.java
-    │   │               │       ├── Position.java
-    │   │               │       └── RegisterRequest.java
-    │   │               ├── MychessApplication.java
-    │   │               ├── repositories
-    │   │               │   ├── BoardRepository.java
+    │   │               ├── game
+    │   │               │   ├── GameController.java
+    │   │               │   ├── Game.java
     │   │               │   ├── GameRepository.java
+    │   │               │   ├── GameService.java
+    │   │               │   └── GameStatus.java
+    │   │               ├── move
+    │   │               │   ├── MoveController.java
+    │   │               │   ├── Move.java
     │   │               │   ├── MoveRepository.java
+    │   │               │   └── MoveService.java
+    │   │               ├── MychessApplication.java
+    │   │               ├── piece
+    │   │               │   ├── PieceColour.java
+    │   │               │   ├── PieceController.java
+    │   │               │   ├── Piece.java
     │   │               │   ├── PieceRepository.java
-    │   │               │   └── PlayerRepository.java
-    │   │               └── services
-    │   │                   ├── AuthenticationService.java
-    │   │                   ├── BoardService.java
-    │   │                   ├── GameService.java
-    │   │                   ├── JwtService.java
-    │   │                   ├── MoveService.java
-    │   │                   └── PieceService.java
+    │   │               │   ├── PieceService.java
+    │   │               │   ├── PieceType.java
+    │   │               │   └── Position.java
+    │   │               └── player
+    │   │                   ├── Player.java
+    │   │                   └── PlayerRepository.java
     │   └── resources
     │       ├── application.properties
     │       ├── static
@@ -93,9 +91,8 @@ stalemate detection, turn-based gameplay, and the ability to save and resume gam
             └── com
                 └── thiagoferraz
                     └── mychess
-                        ├── controllers
-                        │   └── GameControllerTest.java
-                        └── services
+                        └── game
+                            ├── GameControllerTest.java
                             └── GameServiceTest.java
 ```
 
